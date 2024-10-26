@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from .models import RandomModel
 from .serializers import RandomModelSerializer
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny # type: ignore
 
 # Create your views here.
 class RandomModelViewSet(viewsets.ModelViewSet):
