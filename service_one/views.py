@@ -1,4 +1,4 @@
-from rest_framework import viewsets # type: ignore
+from rest_framework import viewsets # type: ignore 0
 from .models import RandomModel
 from .serializers import RandomModelSerializer
 from rest_framework.permissions import AllowAny # type: ignore
