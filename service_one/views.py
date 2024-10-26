@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets # type: ignore
 from .models import RandomModel
 from .serializers import RandomModelSerializer
 from rest_framework.permissions import AllowAny # type: ignore
