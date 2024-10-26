@@ -23,5 +23,5 @@ jobs:
         run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag DOCKER_USERNAME/gimg:$(date +%s)
+        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/gimg:$(date +%s)
 
