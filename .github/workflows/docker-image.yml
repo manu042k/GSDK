@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Build and Push Docker Image
 
 on:
   push:
@@ -13,6 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag gimg:$(date +%s)
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Log in to Docker Hub
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag DOCKER_USERNAME/gimg:$(date +%s)
+
