@@ -32,8 +32,7 @@ SECRET_KEY = 'django-insecure-e-f%nc@7nh0jm-pl*ncrjn0*s%hib+t$x9-yvo=gq-r8ux&il3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'gss.com']
 
 REST_FRAMEWORK['DEFAULT_SCHEMA_CLASS'] = 'drf_spectacular.openapi.AutoSchema'
 
