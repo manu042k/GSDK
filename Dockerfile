@@ -18,7 +18,6 @@ COPY . /app/
 # Expose port 8000
 EXPOSE 8000
 
-# Start the Django server
 # CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "GSDK.wsgi:application"]
 
